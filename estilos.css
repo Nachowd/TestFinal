@@ -1,0 +1,279 @@
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('../multimedia/fondo.jpg') no-repeat center center fixed; /* Fondo con la imagen subida */
+    background-size: cover;
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+    color: #ECF0F1; /* Texto claro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+header {
+    width: 100%;
+    background-color: rgba(52, 73, 94, 0.8); /* Fondo azul oscuro con transparencia */
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    color: #A3E4D7; /* Color azul claro */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ECF0F1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #A3E4D7; /* Color azul claro */
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(44, 62, 80, 0.8); /* Fondo gris oscuro con transparencia */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#carrusel-seccion {
+    margin-bottom: 20px;
+}
+
+#carrusel-seccion h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #A3E4D7; /* Color azul claro */
+}
+
+.swiper-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Ajuste de margen para posición */
+    padding: 20px;
+    background-color: rgba(52, 73, 94, 0.8); /* Fondo azul oscuro con transparencia */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #ECF0F1;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.swiper-button-next {
+    right: 10px;
+}
+
+.swiper-button-prev {
+    left: 10px;
+}
+
+.swiper-pagination {
+    position: absolute;
+    text-align: center;
+    bottom: 10px;
+    width: 100%;
+    color: #ECF0F1;
+}
+
+#buscar-seccion {
+    margin: 20px 0;
+}
+
+#buscar {
+    padding: 10px;
+    width: 50%;
+    font-size: 16px;
+    border: 1px solid #ECF0F1; /* Borde claro */
+    border-radius: 5px;
+    background-color: rgba(52, 73, 94, 0.8); /* Fondo azul oscuro con transparencia */
+    color: #ECF0F1; /* Texto claro */
+}
+
+#productos-seccion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.producto {
+    border: 1px solid #ECF0F1; /* Borde claro */
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    background-color: rgba(52, 73, 94, 0.8); /* Fondo azul oscuro con transparencia */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.producto h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #A3E4D7; /* Color azul claro */
+}
+
+.producto p {
+    font-size: 1em;
+    margin: 5px 0;
+    color: #ECF0F1; /* Texto claro */
+}
+
+button, .carrito-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #E74C3C; /* Fondo rojo brillante */
+    color: #ECF0F1; /* Texto claro */
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover, .carrito-button:hover {
+    background-color: #C0392B; /* Fondo rojo más oscuro */
+    transform: scale(1.05);
+}
+
+#sobre-nosotros {
+    margin: 50px 0;
+}
+
+#sobre-nosotros h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #A3E4D7; /* Color azul claro */
+}
+
+#sobre-nosotros p {
+    font-size: 1.2em;
+    color: #BDC3C7; /* Texto gris claro */
+}
+
+footer {
+    width: 100%;
+    background-color: rgba(52, 73, 94, 0.8); /* Fondo azul oscuro con transparencia */
+    padding: 20px;
+    text-align: center;
+    color: #BDC3C7; /* Texto gris claro */
+    border-top: 1px solid #ECF0F1;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer .social-links {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer .social-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer .social-links li a {
+    color: #ECF0F1;
+    text-decoration: none;
+}
+
+footer .social-links li a:hover {
+    color: #A3E4D7; /* Color azul claro */
+}
+
+/* Estilos para los mensajes de alerta */
+.cssdepopup {
+    background-color: rgba(52, 73, 94, 0.8); /* Fondo azul oscuro con transparencia */
+    color: #ECF0F1; /* Texto claro */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cssdelheader {
+    text-align: center;
+    color: #A3E4D7; /* Color azul claro */
+    font-size: 1.5em;
+}
+
+.cssdeltitulo {
+    font-size: 1.2em;
+    color: #ECF0F1; /* Texto claro */
+}
+
+.cssdelcontenido {
+    font-size: 1em;
+    color: #BDC3C7; /* Texto gris claro */
+}
+
+.cssdelboton {
+    background-color: #E74C3C; /* Fondo rojo brillante */
+    color: #ECF0F1; /* Texto claro */
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cssdelboton:hover {
+    background-color: #C0392B; /* Fondo rojo más oscuro */
+    transform: scale(1.05);
+}
+
+/* Añadir fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');

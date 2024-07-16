@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <title>Carrito de Compras</title>
+</head>
+<body>
+    <header>
+        <h1>WD Computación</h1>
+        <nav>
+            <ul>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="carrusel-seccion">
+            <h2>Galería</h2>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../multimedia/carrusel1.jpg" alt="Imagen 1"></div>
+                    <div class="swiper-slide"><img src="../multimedia/carrusel2.jpg" alt="Imagen 2"></div>
+                    <div class="swiper-slide"><img src="../multimedia/carrusel3.jpg" alt="Imagen 3"></div>
+                    <div class="swiper-slide"><img src="../multimedia/carrusel4.jpg" alt="Imagen 4"></div>
+                    <div class="swiper-slide"><img src="../multimedia/carrusel5.jpg" alt="Imagen 5"></div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+
+        <section id="buscar-seccion">
+            <input type="text" id="buscar" placeholder="Busca tu repuesto" oninput="filtrarProductos()">
+        </section>
+
+        <section id="productos-seccion">
+            <div id="productos"></div>
+            <button class="carrito-button" onclick="mostrarCarrito()">Ir al Carrito</button>
+        </section>
+
+        <section id="sobre-nosotros">
+            <h2>Sobre Nosotros</h2>
+            <p>WD Computación es una empresa dedicada a ofrecer los mejores repuestos y componentes para tu computadora. Nuestro objetivo es brindarte productos de alta calidad a precios accesibles, con un excelente servicio al cliente.</p>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <p>Contacto: info@wdcomputacion.com</p>
+        <p>Síguenos en nuestras redes sociales:</p>
+        <ul class="social-links">
+            <li><a href="#" target="_blank">Facebook</a></li>
+            <li><a href="#" target="_blank">Twitter</a></li>
+            <li><a href="#" target="_blank">Instagram</a></li>
+        </ul>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/index.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
+</body>
+</html>

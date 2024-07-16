@@ -1,0 +1,12 @@
+[
+    { "id": 1, "nombre": "Almacenamiento", "precio": 200000, "descuento": 0, "imagen": "../multimedia/Almacenamiento.jpg" },
+    { "id": 2, "nombre": "Memoria RAM", "precio": 80000, "descuento": 0, "imagen": "../multimedia/MemoriaRam.jpg" },
+    { "id": 3, "nombre": "Tarjeta Gráfica", "precio": 500000, "descuento": 10, "imagen": "../multimedia/GPU.jpg" },
+    { "id": 4, "nombre": "Procesador", "precio": 350000, "descuento": 15, "imagen": "../multimedia/Procesador.jpg" },
+    { "id": 5, "nombre": "Fuente de Poder", "precio": 120000, "descuento": 0, "imagen": "../multimedia/Fuente.jpg" },
+    { "id": 6, "nombre": "Placa Madre", "precio": 150000, "descuento": 5, "imagen": "../multimedia/PlacaMadre.jpg" },
+    { "id": 7, "nombre": "Monitor", "precio": 300000, "descuento": 0, "imagen": "../multimedia/Monitor.jpg" },
+    { "id": 8, "nombre": "Teclado", "precio": 50000, "descuento": 0, "imagen": "../multimedia/Teclado.jpg" },
+    { "id": 9, "nombre": "Mouse", "precio": 45000, "descuento": 0, "imagen": "../multimedia/Mouse.jpg" },
+    { "id": 10, "nombre": "Refrigeracion", "precio": 75000, "descuento": 0, "imagen": "../multimedia/regriferacion.jpg" }
+]

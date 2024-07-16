@@ -6,7 +6,7 @@
 }
 
 body {
-    background: url('../multimedia/fondo.jpg') no-repeat center center fixed; /* Fondo con la imagen subida */
+    background: url('./multimedia/fondo.jpg') no-repeat center center fixed; /* Fondo con la imagen subida */
     background-size: cover;
     font-family: 'Roboto', sans-serif; /* Fuente Roboto */
     color: #ECF0F1; /* Texto claro */

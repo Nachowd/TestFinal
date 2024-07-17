@@ -255,7 +255,50 @@ footer .social-links li a:hover {
     transform: scale(1.05);
 }
 
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 1000;
+}
 
+.whatsapp-icon:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+}
+
+.mercadopago-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #00a650;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.mercadopago-button:hover {
+    background-color: #007a3d;
+    transform: scale(1.05);
+}
+
+.mercadopago-icon {
+    margin-right: 10px;
+    height: 24px;
+}
 
 
 

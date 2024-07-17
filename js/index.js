@@ -137,6 +137,9 @@ function mostrarCarrito() {
         <div class="mt-3">
             <h5>Total a pagar: $${total.toFixed(2)}</h5>
         </div>
+        <a href="https://www.mercadopago.com.ar/" class="btn mercadopago-button">
+            <img src="https://www.mercadopago.com/org-img/MP3/home/logomp3.gif" alt="MercadoPago" class="mercadopago-icon"> Pagar con MercadoPago
+        </a>
     `;
 
     Swal.fire({

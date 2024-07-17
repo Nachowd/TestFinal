@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="./estilos.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>WD Computación</title>
 </head>
 <body>
     <header>
@@ -23,20 +24,25 @@
 
     <main>
         <section id="carrusel-seccion">
-            <h2>Galería</h2>
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="./multimedia/carrusel1.jpg" alt="Imagen 1"></div>
-                    <div class="swiper-slide"><img src="./multimedia/carrusel2.jpg" alt="Imagen 2"></div>
-                    <div class="swiper-slide"><img src="./multimedia/carrusel3.jpg" alt="Imagen 3"></div>
-                    <div class="swiper-slide"><img src="./multimedia/carrusel4.jpg" alt="Imagen 4"></div>
-                    <div class="swiper-slide"><img src="./multimedia/carrusel5.jpg" alt="Imagen 5"></div>
+            <h2>Mejora el rendimiento de tu PC</h2>
+            <div id="carrusel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./multimedia/carrusel1.jpg" class="d-block w-100" alt="Imagen 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./multimedia/carrusel2.jpg" class="d-block w-100" alt="Imagen 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./multimedia/carrusel3.jpg" class="d-block w-100" alt="Imagen 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./multimedia/carrusel4.jpg" class="d-block w-100" alt="Imagen 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./multimedia/carrusel5.jpg" class="d-block w-100" alt="Imagen 5">
+                    </div>
                 </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-                <!-- Add Navigation -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
             </div>
         </section>
 
@@ -51,7 +57,7 @@
 
         <section id="sobre-nosotros">
             <h2>Sobre Nosotros</h2>
-            <p>WD Computación es una empresa dedicada a ofrecer los mejores repuestos y componentes para tu computadora. Nuestro objetivo es brindarte productos de alta calidad a precios accesibles, con un excelente servicio al cliente.</p>
+            <p>Somos una empresa dedicada a ofrecer repuestos y componentes para actualizar y/o armar tu computadora. Nuestro objetivo es brindarte productos de alta calidad a precios accesibles</p>
         </section>
     </main>
 
@@ -59,33 +65,17 @@
         <p>Contacto: info@wdcomputacion.com</p>
         <p>Síguenos en nuestras redes sociales:</p>
         <ul class="social-links">
-            <li><a href="#" target="_blank">Facebook</a></li>
-            <li><a href="#" target="_blank">Twitter</a></li>
-            <li><a href="#" target="_blank">Instagram</a></li>
+            <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+            <li><a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i> X</a></li>
+            <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
         </ul>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/index.js"></script>
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 1,
-            spaceBetween: 10,
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-        });
-    </script>
 </body>
 </html>
+
+

@@ -1,4 +1,5 @@
-/* Estilos globales */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,28 +7,27 @@
 }
 
 body {
-    background: url('./multimedia/fondo.jpg') no-repeat center center fixed; /* Fondo con la imagen subida */
+    background: url('./multimedia/fondo.jpg') no-repeat center center fixed;
     background-size: cover;
-    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
-    color: #ECF0F1; /* Texto claro */
+    font-family: 'Roboto', sans-serif;
+    color: #ECF0F1;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    backdrop-filter: blur(10px);
 }
 
 header {
     width: 100%;
-    background-color: rgba(52, 73, 94, 0.8); /* Fondo azul oscuro con transparencia */
+    background-color: rgba(52, 73, 94, 0.8);
     padding: 20px;
     text-align: center;
 }
 
 header h1 {
     margin-bottom: 10px;
-    color: #A3E4D7; /* Color azul claro */
+    color: #A3E4D7;
 }
 
 nav ul {
@@ -47,7 +47,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #A3E4D7; /* Color azul claro */
+    color: #A3E4D7;
 }
 
 main {
@@ -55,7 +55,7 @@ main {
     max-width: 1200px;
     padding: 20px;
     text-align: center;
-    background-color: rgba(44, 62, 80, 0.8); /* Fondo gris oscuro con transparencia */
+    background-color: rgba(44, 62, 80, 0.8);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -67,48 +67,13 @@ main {
 #carrusel-seccion h2 {
     font-size: 2em;
     margin-bottom: 20px;
-    color: #A3E4D7; /* Color azul claro */
+    color: #A3E4D7;
 }
 
-.swiper-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto; /* Ajuste de margen para posición */
-    padding: 20px;
-    background-color: rgba(52, 73, 94, 0.8); /* Fondo azul oscuro con transparencia */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-}
-
-.swiper-slide img {
+.carousel-inner img {
     width: 100%;
     height: auto;
     border-radius: 5px;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-    color: #ECF0F1;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.swiper-button-next {
-    right: 10px;
-}
-
-.swiper-button-prev {
-    left: 10px;
-}
-
-.swiper-pagination {
-    position: absolute;
-    text-align: center;
-    bottom: 10px;
-    width: 100%;
-    color: #ECF0F1;
 }
 
 #buscar-seccion {
@@ -119,10 +84,10 @@ main {
     padding: 10px;
     width: 50%;
     font-size: 16px;
-    border: 1px solid #ECF0F1; /* Borde claro */
+    border: 1px solid #ECF0F1;
     border-radius: 5px;
-    background-color: rgba(52, 73, 94, 0.8); /* Fondo azul oscuro con transparencia */
-    color: #ECF0F1; /* Texto claro */
+    background-color: rgba(52, 73, 94, 0.8);
+    color: #ECF0F1;
 }
 
 #productos-seccion {
@@ -140,12 +105,12 @@ main {
 }
 
 .producto {
-    border: 1px solid #ECF0F1; /* Borde claro */
+    border: 1px solid #ECF0F1;
     border-radius: 10px;
     padding: 20px;
     width: 250px;
     text-align: center;
-    background-color: rgba(52, 73, 94, 0.8); /* Fondo azul oscuro con transparencia */
+    background-color: rgba(52, 73, 94, 0.8);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -164,21 +129,21 @@ main {
 .producto h2 {
     font-size: 1.8em;
     margin-bottom: 10px;
-    color: #A3E4D7; /* Color azul claro */
+    color: #A3E4D7;
 }
 
 .producto p {
     font-size: 1em;
     margin: 5px 0;
-    color: #ECF0F1; /* Texto claro */
+    color: #ECF0F1;
 }
 
-button, .carrito-button {
+button, .carrito-button, .swal2-confirm, .swal2-cancel {
     display: block;
     margin: 20px auto;
     padding: 10px 20px;
-    background-color: #E74C3C; /* Fondo rojo brillante */
-    color: #ECF0F1; /* Texto claro */
+    background-color: #5DADE2;
+    color: #ECF0F1;
     border: none;
     border-radius: 5px;
     font-size: 1em;
@@ -186,8 +151,8 @@ button, .carrito-button {
     transition: background-color 0.3s, transform 0.3s;
 }
 
-button:hover, .carrito-button:hover {
-    background-color: #C0392B; /* Fondo rojo más oscuro */
+button:hover, .carrito-button:hover, .swal2-confirm:hover, .swal2-cancel:hover {
+    background-color: #3498DB;
     transform: scale(1.05);
 }
 
@@ -198,20 +163,20 @@ button:hover, .carrito-button:hover {
 #sobre-nosotros h2 {
     font-size: 2em;
     margin-bottom: 20px;
-    color: #A3E4D7; /* Color azul claro */
+    color: #A3E4D7;
 }
 
 #sobre-nosotros p {
     font-size: 1.2em;
-    color: #BDC3C7; /* Texto gris claro */
+    color: #BDC3C7;
 }
 
 footer {
     width: 100%;
-    background-color: rgba(52, 73, 94, 0.8); /* Fondo azul oscuro con transparencia */
+    background-color: rgba(52, 73, 94, 0.8);
     padding: 20px;
     text-align: center;
-    color: #BDC3C7; /* Texto gris claro */
+    color: #BDC3C7;
     border-top: 1px solid #ECF0F1;
 }
 
@@ -235,45 +200,63 @@ footer .social-links li a {
 }
 
 footer .social-links li a:hover {
-    color: #A3E4D7; /* Color azul claro */
+    color: #A3E4D7;
 }
 
-/* Estilos para los mensajes de alerta */
 .cssdepopup {
-    background-color: rgba(52, 73, 94, 0.8); /* Fondo azul oscuro con transparencia */
-    color: #ECF0F1; /* Texto claro */
+    background-color: rgba(52, 73, 94, 0.8);
+    color: #ECF0F1;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .cssdelheader {
     text-align: center;
-    color: #A3E4D7; /* Color azul claro */
+    color: #A3E4D7;
     font-size: 1.5em;
 }
 
 .cssdeltitulo {
     font-size: 1.2em;
-    color: #ECF0F1; /* Texto claro */
+    color: #ECF0F1;
 }
 
 .cssdelcontenido {
     font-size: 1em;
-    color: #BDC3C7; /* Texto gris claro */
+    color: #BDC3C7;
 }
 
-.cssdelboton {
-    background-color: #E74C3C; /* Fondo rojo brillante */
-    color: #ECF0F1; /* Texto claro */
+.cssdelboton, .swal2-confirm {
+    background-color: #5DADE2;
+    color: #ECF0F1;
     border-radius: 5px;
     padding: 10px 20px;
     transition: background-color 0.3s, transform 0.3s;
 }
 
-.cssdelboton:hover {
-    background-color: #C0392B; /* Fondo rojo más oscuro */
+.cssdelboton:hover, .swal2-confirm:hover {
+    background-color: #3498DB;
     transform: scale(1.05);
 }
 
-/* Añadir fuentes de Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+.eliminar-button {
+    background-color: #5DADE2 !important;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.eliminar-button:hover {
+    background-color: #C0392B;
+    transform: scale(1.05);
+}
+
+
+
+
+
+

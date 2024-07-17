@@ -20,7 +20,7 @@ function mostrarProductos(productos) {
             <h2>${repuesto.nombre}</h2>
             <p>Precio: $${repuesto.precio}</p>
             <p>Descuento: ${repuesto.descuento}%</p>
-            <button onclick="agregarAlCarrito(${repuesto.id})">Agregar al Carrito</button>
+            <button class="carrito-button" onclick="agregarAlCarrito(${repuesto.id})">Agregar al Carrito</button>
         `;
         productosDiv.appendChild(productoDiv);
     });
@@ -28,7 +28,15 @@ function mostrarProductos(productos) {
 
 function agregarAlCarrito(id) {
     let repuesto = window.repuestos.find(r => r.id === id);
-    carrito.push(repuesto);
+    let itemCarrito = carrito.find(item => item.id === repuesto.id);
+
+    if (itemCarrito) {
+        itemCarrito.cantidad++;
+    } else {
+        repuesto.cantidad = 1;
+        carrito.push(repuesto);
+    }
+
     localStorage.setItem('carrito', JSON.stringify(carrito));
 
     Swal.fire({
@@ -41,28 +49,33 @@ function agregarAlCarrito(id) {
             header: 'cssdelheader',
             title: 'cssdeltitulo',
             content: 'cssdelcontenido',
-            confirmButton: 'cssdelboton'
+            confirmButton: 'carrito-button'
         }
     });
 }
 
 function eliminarDelCarrito(id) {
-    let index = carrito.findIndex(r => r.id === id);
-    if (index !== -1) {
-        let [repuesto] = carrito.splice(index, 1);
+    let itemCarrito = carrito.find(item => item.id === id);
+
+    if (itemCarrito) {
+        if (itemCarrito.cantidad > 1) {
+            itemCarrito.cantidad--;
+        } else {
+            carrito = carrito.filter(item => item.id !== id);
+        }
         localStorage.setItem('carrito', JSON.stringify(carrito));
 
         Swal.fire({
             icon: 'success',
             title: '¡Producto eliminado!',
-            text: `${repuesto.nombre} eliminado del carrito.`,
+            text: `${itemCarrito.nombre} eliminado del carrito.`,
             confirmButtonText: 'Aceptar',
             customClass: {
                 popup: 'cssdepopup',
                 header: 'cssdelheader',
                 title: 'cssdeltitulo',
                 content: 'cssdelcontenido',
-                confirmButton: 'cssdelboton'
+                confirmButton: 'carrito-button'
             }
         });
     } else {
@@ -76,7 +89,7 @@ function eliminarDelCarrito(id) {
                 header: 'cssdelheader',
                 title: 'cssdeltitulo',
                 content: 'cssdelcontenido',
-                confirmButton: 'cssdelboton'
+                confirmButton: 'carrito-button'
             }
         });
     }
@@ -94,61 +107,49 @@ function mostrarCarrito() {
                 header: 'cssdelheader',
                 title: 'cssdeltitulo',
                 content: 'cssdelcontenido',
-                confirmButton: 'cssdelboton'
+                confirmButton: 'carrito-button'
             }
         });
         return;
     }
 
     let total = 0;
-    let mensaje = 'Productos en tu carrito:\n';
+    let contenidoHTML = `
+        <ul class="list-group">
+    `;
 
     carrito.forEach((repuesto, index) => {
         let precioDescuento = repuesto.precio * (1 - repuesto.descuento / 100);
-        total += precioDescuento;
-        mensaje += `${index + 1}. ${repuesto.nombre} - Precio: $${precioDescuento.toFixed(2)}\n`;
+        total += precioDescuento * repuesto.cantidad;
+        contenidoHTML += `
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                    <h5>${repuesto.nombre}</h5>
+                    <p>Precio: $${precioDescuento.toFixed(2)} x ${repuesto.cantidad}</p>
+                </div>
+                <button class="btn eliminar-button btn-sm" onclick="eliminarDelCarrito(${repuesto.id})">Eliminar</button>
+            </li>
+        `;
     });
 
-    mensaje += `\nTotal a pagar: $${total.toFixed(2)}\n`;
-    mensaje += '\n¿Quieres eliminar algún producto del carrito? Ingresa el número del producto o cancela para mantener tu carrito.\n';
+    contenidoHTML += `
+        </ul>
+        <div class="mt-3">
+            <h5>Total a pagar: $${total.toFixed(2)}</h5>
+        </div>
+    `;
 
     Swal.fire({
         icon: 'info',
         title: 'Productos en tu carrito',
-        text: mensaje,
-        input: 'text',
-        inputPlaceholder: 'Ingresa el número del producto',
+        html: contenidoHTML,
         confirmButtonText: 'Aceptar',
-        showCancelButton: true,
-        cancelButtonText: 'Cancelar',
-        cancelButtonColor: '#d33',
         customClass: {
             popup: 'cssdepopup',
             header: 'cssdelheader',
             title: 'cssdeltitulo',
             content: 'cssdelcontenido',
-            confirmButton: 'cssdelboton'
-        }
-    }).then((result) => {
-        if (result.isConfirmed) {
-            let numero = parseInt(result.value);
-            if (!isNaN(numero) && numero > 0 && numero <= carrito.length) {
-                eliminarDelCarrito(carrito[numero - 1].id);
-            } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: 'Opción inválida.',
-                    confirmButtonText: 'Aceptar',
-                    customClass: {
-                        popup: 'cssdepopup',
-                        header: 'cssdelheader',
-                        title: 'cssdeltitulo',
-                        content: 'cssdelcontenido',
-                        confirmButton: 'cssdelboton'
-                    }
-                });
-            }
+            confirmButton: 'carrito-button'
         }
     });
 }
@@ -160,3 +161,4 @@ function filtrarProductos() {
     );
     mostrarProductos(productosFiltrados);
 }
+
